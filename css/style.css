@@ -295,7 +295,8 @@ html,body,a,button,.status-button,.market-card,.chat-row{cursor:url("data:image/
 }
 
 .payment-inline img,
-.eur-logo {
+.eur-logo,
+.usd-logo {
   width: 28px;
   height: 28px;
   display: inline-flex;
@@ -308,7 +309,8 @@ html,body,a,button,.status-button,.market-card,.chat-row{cursor:url("data:image/
   padding: 5px;
 }
 
-.eur-logo {
+.eur-logo,
+.usd-logo {
   padding: 0;
   color: #39c8ff;
   font-size: 19px;
