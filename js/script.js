@@ -48,3 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('pageshow', tryStart);
   tryStart();
 })();
+
+
+// Theme scroll-to-top button
+(() => {
+  const button = document.getElementById('scrollTop');
+  if (!button) return;
+
+  const update = () => {
+    button.classList.toggle('show', window.scrollY > 420);
+  };
+
+  button.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
