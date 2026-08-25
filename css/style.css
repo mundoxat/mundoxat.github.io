@@ -379,3 +379,51 @@ html,body,a,button,.status-button,.market-card,.chat-row{cursor:url("data:image/
     white-space: normal;
   }
 }
+
+/* Premium IDs for sale */
+.id-listing {
+  margin: 4px 0 16px;
+  padding: 10px 12px;
+  border: 1px solid rgba(50, 196, 255, .14);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(13, 31, 46, .72), rgba(9, 17, 29, .5));
+  max-width: 360px;
+}
+
+.id-listing-label {
+  margin-bottom: 7px;
+  color: #5f728d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.id-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 4px 0;
+  color: #aebbd0;
+  font-size: 14px;
+  letter-spacing: .01em;
+}
+
+.id-item span {
+  color: #dbe5f2;
+  font-weight: 650;
+}
+
+.id-item strong {
+  color: #39c8ff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 700px) {
+  .id-listing {
+    max-width: 100%;
+  }
+}
