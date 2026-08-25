@@ -66,3 +66,35 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('scroll', update, { passive: true });
   update();
 })();
+
+
+// Theme music control
+(() => {
+  const music = document.getElementById('profileMusic');
+  const button = document.getElementById('musicControl');
+  const icon = document.getElementById('musicIcon');
+  if (!music || !button || !icon) return;
+
+  const update = () => {
+    const playing = !music.paused && !music.ended;
+    button.classList.toggle('playing', playing);
+    button.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
+    button.setAttribute('title', playing ? 'Pause music' : 'Play music');
+    icon.textContent = playing ? 'Ⅱ' : '▶';
+  };
+
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (music.paused) {
+      music.play().catch(() => {});
+    } else {
+      music.pause();
+    }
+    update();
+  });
+
+  music.addEventListener('play', update);
+  music.addEventListener('pause', update);
+  music.addEventListener('ended', update);
+  update();
+})();
