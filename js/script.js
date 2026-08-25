@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Keep real links clickable. The xat Trade and xat Loja rows use their href values.
+  // Only non-link cards can use data-card for visual selection.
   document.querySelectorAll("[data-card]").forEach((card) => {
+    if (card.tagName.toLowerCase() === "a" && card.getAttribute("href") && card.getAttribute("href") !== "#") {
+      return;
+    }
+
     card.addEventListener("click", (event) => {
       const target = card.dataset.card;
       if (target && target !== "") {
